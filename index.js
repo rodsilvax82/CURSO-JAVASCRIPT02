@@ -19,11 +19,6 @@ class ContaCorrente {
     }
 }
 
-
-
-
-
-
 const cliente1 = new Cliente();
 const conta1 = new ContaCorrente();
 let valorSacado = 200;
