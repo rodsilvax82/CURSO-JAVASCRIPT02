@@ -5,41 +5,34 @@ class Cliente {
 
 class ContaCorrente {
     Agencia;
-    Saldo;
+    _Saldo = 0;
+    // #Saldo = 0 ---- Deixar a variável privada
 
     sacar(valor) {
-        if (this.Saldo >= valor) {
-            this.Saldo -= valor;
+        if (this._Saldo >= valor) {
+            this._Saldo -= valor;
+            return valor;
+        }
+        return
+    }
+    depositar(valor) {
+        if (valor > 0) {
+            this._Saldo += valor;
         }
     }
 }
 
-
-
-
-
-
 const cliente1 = new Cliente();
 const conta1 = new ContaCorrente();
-let valorSacado = 200;
-
 cliente1.Nome = "Rodrigo";
 cliente1.CPF = 35672009840;
 conta1.Agencia = 1001;
 
-conta1.Saldo = 0;
-console.log(conta1.Saldo);
-conta1.Saldo = 100;
-console.log(conta1.Saldo);
-conta1.Saldo = 50;
-console.log(conta1.Saldo);
+conta1.depositar(100);
+conta1.depositar(100);
+conta1.depositar(100);
+const valorSacado = conta1.sacar(50);
 
-const cliente2 = new Cliente();
-const conta2 = new ContaCorrente();
-cliente2.Nome = "Tatiana";
-cliente2.CPF = 15935725840;
-conta2.Agencia = 1001;
-conta2.Saldo = 0;
+console.log(valorSacado);
+console.log(conta1)
 
-// console.log(cliente1);
-// console.log(cliente2);
