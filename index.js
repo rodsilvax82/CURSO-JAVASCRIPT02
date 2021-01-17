@@ -7,6 +7,7 @@ class ContaCorrente {
     Agencia;
     Saldo;
     // #Saldo = 0 ---- Deixar a variável privada
+
     sacar(valor) {
         if (this.Saldo >= valor) {
             this.Saldo -= valor;
@@ -28,6 +29,8 @@ cliente1.CPF = 35672009840;
 conta1.Agencia = 1001;
 
 conta1.Saldo = 0;
+console.log(conta1.Saldo);
+conta1.depositar(100);
 console.log(conta1.Saldo);
 conta1.depositar(100);
 console.log(conta1.Saldo);
